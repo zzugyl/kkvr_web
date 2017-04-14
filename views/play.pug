@@ -1,0 +1,20 @@
+html(style="height: 100%;width: 100%;")
+    head
+        script(type="text/javascript" src="sdk.js")
+    body(style="height: 100%;width: 100%;")
+        div(id="detu_container" style="height: 100%;width: 100%;background:gray")
+        script.
+            var config = {
+               target: "detu_container",
+               videourl: "http://pull-g.kktv8.com/livekktv/#{data.nID}.flv",
+               html5videourl: "http://pull-g.kktv8.com/livekktv/#{data.nID}.flv",
+               mp3: "http://media.qicdn.detu.com/@/18497977-0655-ADAC-DCA7-D5A0F94096891/2015-09-02/55e65dfe20013.mp3",
+               islive: true,
+                ready: function(obj){
+                  pano = obj;
+                  //开启陀螺仪效果
+                  pano.gyro(true);
+                }
+            };
+            detupano(config);
+            
